@@ -2,22 +2,25 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import countries from "./countries.json";
 
-import Layout from './components/Layout';
-import CountriesList from './components/CountriesList';
+import Navbar from './components/Navbar';
+import CountriesList from './components/CountriesList/CountriesList';
 import CountryDetails from './components/CountryDetails';
+import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
+      <header>
+        <Navbar />
+      </header>
       <Routes>
-        <Route element={<Layout />}>
-          <Route path='/'></Route>
-          <Route path="/countries" element={<CountriesList />}>
-            <Route path=":code" element={<CountryDetails />} />
-          </Route>
-          <Route path='*' element={<h2>Error 404</h2>}></Route>
+        <Route path='/' />
+        <Route path="/countries" element={<CountriesList countries={countries} />}>
+          <Route path=":code" element={<CountryDetails countries={countries} />} />
         </Route>
+        <Route path='*' element={<h2>Error 404</h2>}></Route>
       </Routes>
+      <footer></footer>
     </div>
   );
 }

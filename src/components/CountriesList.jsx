@@ -8,7 +8,7 @@ const CountriesList = (props) => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col">
+        <div className="col-5">
           <div className="list-group">
             {countries.map((country) => {
               const alpha2Code = country.alpha2Code?.toLowerCase();
@@ -27,9 +27,7 @@ const CountriesList = (props) => {
             })}
           </div>
         </div>
-        <div className="col">
-          <Outlet></Outlet>
-        </div>
+        <Outlet></Outlet>
       </div>
     </div>
   );

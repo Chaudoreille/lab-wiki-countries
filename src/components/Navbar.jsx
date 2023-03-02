@@ -1,7 +1,11 @@
 import React from 'react';
 
 const Navbar = () => {
-  return <div>Navbar</div>;
+  return (
+    <nav>
+      <h1>LAB - WikiCountries</h1>
+    </nav>
+  );
 };
 
 export default Navbar;

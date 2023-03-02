@@ -13,11 +13,9 @@ const CountryDetails = (props) => {
   );
 
   useEffect(() => {
-    console.log('ASV', code);
     setCurrentCountry((current) => countryFrom3Code(code));
   }, [code, countryFrom3Code]);
 
-  console.log('currentCountry', currentCountry);
   if (!currentCountry) {
     return <p>Loading</p>;
   }

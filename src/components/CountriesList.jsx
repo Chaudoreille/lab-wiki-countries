@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './CountriesList.css';
 import { Outlet } from 'react-router-dom';
 
 const CountriesList = (props) => {

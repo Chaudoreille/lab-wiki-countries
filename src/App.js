@@ -3,9 +3,8 @@ import { Route, Routes } from 'react-router-dom';
 import countries from "./countries.json";
 
 import Navbar from './components/Navbar';
-import CountriesList from './components/CountriesList/CountriesList';
+import CountriesList from './components/CountriesList';
 import CountryDetails from './components/CountryDetails';
-import { Outlet } from 'react-router-dom';
 
 function App() {
   return (

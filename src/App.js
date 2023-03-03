@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
+      <Navbar home='/countries' />
       <Routes>
         <Route path='/' element={<Navigate to="/countries" />} />
         <Route path="/countries" element={<CountriesList countries={data} />}>

@@ -46,10 +46,13 @@ const CountryDetails = () => {
   }
   return (
     <div className="col-7">
-      <h1>
-        <CountryLink {...currentCountry} />
+      <h1 className="w-100 py-5 border">
+        <CountryLink
+          customClass="text-decoration-none align-items-center mx-auto d-flex flex-column px-5"
+          {...currentCountry}
+        />
       </h1>
-      <table className="table">
+      <table className="table border">
         <thead></thead>
         <tbody>
           <tr>
@@ -65,10 +68,10 @@ const CountryDetails = () => {
           <tr>
             <td>Borders</td>
             <td>
-              <ul>
+              <ul className="list-group">
                 {neighbors.map((neighbor) => {
                   return (
-                    <li key={neighbor.alpha3Code}>
+                    <li className="list-group-item" key={neighbor.alpha3Code}>
                       <CountryLink {...neighbor} />
                     </li>
                   );

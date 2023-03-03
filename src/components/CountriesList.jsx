@@ -11,7 +11,9 @@ const CountriesList = (props) => {
         <div className="col-5">
           <div className="list-group">
             {countries.map((country) => (
-              <CountryLink key={country.alpha3Code} {...country} />
+              <div className="list-group-item" key={country.alpha3Code}>
+                <CountryLink {...country} />
+              </div>
             ))}
           </div>
         </div>

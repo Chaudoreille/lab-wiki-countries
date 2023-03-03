@@ -8,6 +8,7 @@ const FilterOptions = ({ setVariable, defaultOption, children }) => {
 
     if (selected === opt) {
       select(null);
+      setVariable(null);
     } else {
       select(opt);
       setVariable(opt);
@@ -25,9 +26,7 @@ const FilterOptions = ({ setVariable, defaultOption, children }) => {
         <li key={opt} className="col p-0">
           <button
             type="button"
-            className={
-              (opt === defaultOption ? 'active' : '') + 'btn btn-light'
-            }
+            className={opt === selected ? 'btn btn-primary' : 'btn btn-light'}
             onClick={setOption}
           >
             {opt}

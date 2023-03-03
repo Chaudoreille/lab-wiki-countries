@@ -1,10 +1,9 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import CountryLink from './CountryLink';
 
-const CountryDetails = (props) => {
+const CountryDetails = ({ countries }) => {
   const { code } = useParams();
-  const { countries } = props;
   const [currentCountry, setCurrentCountry] = useState();
 
   const countryFrom3Code = useCallback(
@@ -21,8 +20,10 @@ const CountryDetails = (props) => {
   }
   return (
     <div className="col-7">
-      <h1>{currentCountry.name.common}</h1>
-      <table class="table">
+      <h1>
+        <CountryLink {...currentCountry} />
+      </h1>
+      <table className="table">
         <thead></thead>
         <tbody>
           <tr>
@@ -39,13 +40,13 @@ const CountryDetails = (props) => {
             <td>Borders</td>
             <td>
               <ul>
-                {currentCountry.borders.map((neighbor) => (
-                  <li key={neighbor}>
-                    <Link to={neighbor}>
-                      {countryFrom3Code(neighbor).name.common}
-                    </Link>
-                  </li>
-                ))}
+                {currentCountry.borders.map((neighborCode) => {
+                  return (
+                    <li key={neighborCode}>
+                      <CountryLink {...countryFrom3Code(neighborCode)} />
+                    </li>
+                  );
+                })}
               </ul>
             </td>
           </tr>

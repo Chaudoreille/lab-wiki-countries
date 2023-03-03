@@ -15,7 +15,6 @@ function App() {
       try {
         const response = await fetch('https://ih-countries-api.herokuapp.com/countries');
         const json = await response.json();
-        console.log(json);
         setData(json);
       } catch (error) {
         console.error(error);

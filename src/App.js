@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import countries from "./countries.json";
 
 import Navbar from './components/Navbar';
@@ -9,11 +9,9 @@ import CountryDetails from './components/CountryDetails';
 function App() {
   return (
     <div className="App">
-      <header>
-        <Navbar />
-      </header>
+      <Navbar />
       <Routes>
-        <Route path='/' />
+        <Route path='/' element={<Navigate to="/countries" />} />
         <Route path="/countries" element={<CountriesList countries={countries} />}>
           <Route path=":code" element={<CountryDetails countries={countries} />} />
         </Route>
